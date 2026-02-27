@@ -18,20 +18,24 @@ Now upgraded to be much more awesome:
 python wheel_app.py
 ```
 
-## Build a Windows EXE
-
-From a Windows machine:
+## Build executable locally
 
 ```bash
 pip install pyinstaller
-pyinstaller --noconfirm --onefile --windowed --name CrazyWheel wheel_app.py
+python build_exe.py
 ```
 
-Then run:
+- On Windows this produces `dist/CrazyWheel.exe`.
+- On Linux/macOS this produces a native executable (`dist/CrazyWheel`) and prints a note.
 
-```text
-dist/CrazyWheel.exe
-```
+## Get a downloadable Windows EXE (GitHub Actions)
+
+A workflow is included at `.github/workflows/build-exe.yml`.
+
+1. Push this branch to GitHub.
+2. Open **Actions** → **Build Windows EXE**.
+3. Run workflow.
+4. Download artifact `CrazyWheel-windows-exe` (zip containing `CrazyWheel.exe`).
 
 ## Test
 
